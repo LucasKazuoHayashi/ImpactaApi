@@ -1,0 +1,566 @@
+{
+	"info": {
+		"_postman_id": "1e2302b9-ab6b-44f7-b45f-03dfe92b7484",
+		"name": "Projeto Impacta API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11546338"
+	},
+	"item": [
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Add Produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\": \"BR01\",\r\n    \"nome\": \"jaqueta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Produto (Nome Inexistente)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\": \"BR01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Produto (Codigo Inexistente)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"nome\": \"jaqueta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Produto Por Codigo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/:codigo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								":codigo"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "BR01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Produto Por Codigo (Código Inexistente)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/:codigo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								":codigo"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "US01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar  Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Componente",
+			"item": [
+				{
+					"name": "Add Componente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"indice\": 125,\r\n    \"SKU\": \"LG012NR893\",\r\n    \"descricao\": \"tecido\",\r\n    \"preco\": 22.93,\r\n    \"quantidade\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/:codigo/componente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								":codigo",
+								"componente"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "BR01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Componente (Codigo Inexistente)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"indice\": 125,\r\n    \"SKU\": \"LG012NR893\",\r\n    \"descricao\": \"tecido\",\r\n    \"preco\": 22.93,\r\n    \"quantidade\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/:codigo/componente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								":codigo",
+								"componente"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "BR01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Componente (Descricao Inexistente)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\": \"TD01\",\r\n    \"indice\": 125,\r\n    \"SKU\": \"LG012NR893\",\r\n    \"preco\": 22.93,\r\n    \"quantidade\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/:codigo/componente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								":codigo",
+								"componente"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "BR01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Componente (Indice Inexistente)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\": \"TD01\",    \r\n    \"SKU\": \"LG012NR893\",\r\n    \"descricao\": \"tecido\",\r\n    \"preco\": 22.93,\r\n    \"quantidade\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/:codigo/componente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								":codigo",
+								"componente"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "BR01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Componente (SKU Inexistente)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\": \"TD01\",\r\n    \"indice\": 125,    \r\n    \"descricao\": \"tecido\",\r\n    \"preco\": 22.93,\r\n    \"quantidade\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/:codigo/componente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								":codigo",
+								"componente"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "BR01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Componente Pelo Indice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/:codigo/componente/:indice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								":codigo",
+								"componente",
+								":indice"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "BR01"
+								},
+								{
+									"key": "indice",
+									"value": "125"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Componente Pelo Indice (Indice Inexistente)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/:codigo/componente/:indice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								":codigo",
+								"componente",
+								":indice"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "BR01"
+								},
+								{
+									"key": "indice",
+									"value": "1302"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Componente Pelo Indice (Código Inexistente)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/:codigo/componente/:indice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								":codigo",
+								"componente",
+								":indice"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "US01"
+								},
+								{
+									"key": "indice",
+									"value": "125"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Componente Por Produto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/:codigo/componente/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								":codigo",
+								"componente",
+								""
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "BR01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Componente Pela Descrição",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/componente?descricao=tecido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								"componente"
+							],
+							"query": [
+								{
+									"key": "descricao",
+									"value": "tecido"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Componente Pela Descrição (Descrição Inexistente)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/produto/componente?descricao=oculos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								"componente"
+							],
+							"query": [
+								{
+									"key": "descricao",
+									"value": "oculos"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
