@@ -1,0 +1,13 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    container_name: impactaApi
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: impacta
+      POSTGRES_PASSWORD: impacta123
+      POSTGRES_DB: api
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
